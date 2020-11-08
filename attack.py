@@ -32,11 +32,8 @@ def find_key_kpa(a, b, u, x):
 	a_det = np.linalg.det(a)
 	a1 = (a_inv * a_det)
 	a1 = np.mod(a1, 2)
-	#print("inverted a:")
-	#print(a1)
 	k = np.dot(a1, (x + np.dot(b, u)))
 	k = np.rint(k).astype(int)  # the previous arrays are all float with some errors
-	#print("key found: ", k)
 
 	return np.mod(k, 2)
 

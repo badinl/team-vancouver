@@ -184,12 +184,10 @@ def main():
 	print(bin_array_to_strhex(uu))
 
 	# ----- TASK 8 ----
-	return  # prevent execution of task 8
+	# return  # prevent execution of task 8
 	print("\nMeet in the Middle attack")
 	print("Keypairs candidates")
-	total_matches = []
 	file1 = open('data/KPApairsVancouver_non_linear.hex', 'r')
-	#file1 = open('data/KPApairsTest_non_linear.hex', 'r')
 	lines = file1.readlines()
 
 	l = lines[0].split("\t")
@@ -205,8 +203,6 @@ def main():
 		print("no matches found")
 	else:
 		for keypair in matches:
-			#if keypair[0] == '0x1234':
-			#	print('the key is present: ', keypair)
 
 			works = 0
 			for line in lines:
@@ -223,7 +219,6 @@ def main():
 	index_correct = correct.index(max_correct)
 	keys_correct = matches[index_correct]
 	print("Best keypair {} with {} matches".format(keys_correct, max_correct))
-	# print(np.argmax(np.array(correct)).shape)
 	(unique, counts) = np.unique(correct, return_counts=True)
 	frequencies = np.asarray((unique, counts)).T
 	print("Histogram of matches for keypairs:")
